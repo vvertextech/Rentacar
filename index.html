@@ -1,0 +1,160 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Loriki Rent-A-Car</title>
+      <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+      <!-- Navbar -->
+      <header class="navbar">
+        <div class="container nav-container">
+          <img class="logo" src="img/logo.png" alt="" />
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#cars">Cars</a></li>
+              <li><a href="#booking">Booking</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero-black">
+        <section id="home" class="section hero-section">
+          <div class="container hero-content">
+            <img src="img/car-header.png" alt="Car" class="hero-car" />
+            <div class="hero-text">
+              <h2>Your Premium Ride Awaits</h2>
+              <p>Luxury, comfort, and style — all at your fingertips.</p>
+              <a href="#cars" class="btn">Explore Our Cars</a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="section services-section">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="icon">🚗</div>
+              <h3>Wide Car Selection</h3>
+              <p>
+                Choose from a large fleet of luxury, economy, and specialty
+                vehicles.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon">🔐</div>
+              <h3>Secure Reservations</h3>
+              <p>
+                Enjoy peace of mind with our encrypted and secure booking system.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon">📅</div>
+              <h3>Flexible Booking</h3>
+              <p>Reserve cars for any date and duration — no rigid schedules.</p>
+            </div>
+            <div class="service-card">
+              <div class="icon">🛡️</div>
+              <h3>Fraud Prevention</h3>
+              <p>
+                Advanced security checks to prevent identity and payment fraud.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon">🔍</div>
+              <h3>Vehicle Verification</h3>
+              <p>All cars are inspected and verified for quality and safety.</p>
+            </div>
+            <div class="service-card">
+              <div class="icon">🕵️</div>
+              <h3>Privacy Assurance</h3>
+              <p>
+                Your personal data is protected and never shared without consent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cars Section -->
+      <section id="cars" class="section cars-section">
+        <div class="container">
+          <h2>Our Fleet</h2>
+          <div class="car-grid" id="carList"></div>
+        </div>
+      </section>
+
+      <!-- Booking Section -->
+      <section id="booking" class="section booking-section">
+        <div class="container">
+          <h2>Book a Car</h2>
+          <form id="bookingForm">
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <input type="text" placeholder="Car Model" required />
+            <label>Pick-up Date:</label>
+            <input type="date" required />
+            <label>Return Date:</label>
+            <input type="date" required />
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>Email: qendrimhadraj@gmail.com</p>
+          <p>Phone: +383 49 133 748</p>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!..."
+              width="1500"
+              height="300"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2025 Loriki Rent-A-Car. All rights reserved.</p>
+      </footer>
+      
+      <!-- Car Detail Modal -->
+      <div id="carModal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-btn" id="closeModal">&times;</span>
+          <div class="modal-body">
+            <h2 id="modalCarTitle">Car Name</h2>
+            <div class="modal-image-slider">
+              <button class="slider-btn" id="prevBtn">&#8249;</button>
+              <img id="modalCarImage" src="" alt="Car Image" />
+              <button class="slider-btn" id="nextBtn">&#8250;</button>
+            </div>
+            <p
+              id="modalCarDescription"
+              style="
+                margin-top: 1rem;
+                font-size: 1.1rem;
+                color: #333;
+                font-weight: 500;
+              "></p>
+          </div>
+        </div>
+      </div>
+      <script src="main.js"></script>
+    </body>
+  </html>
