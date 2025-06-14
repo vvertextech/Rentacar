@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loriki Rent-A-Car</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="80"
+        height="80"
+        viewBox="0 0 64 64"
+        fill="#fff"
+        class="spinning-car">
+        <path
+          d="M54 28h-4l-2-6H16l-2 6h-4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2a6 6 0 0 0 12 0h12a6 6 0 0 0 12 0h2a2 2 0 0 0 2-2V30a2 2 0 0 0-2-2zM20 42a4 4 0 1 1 8 0 4 4 0 0 1-8 0zm24 0a4 4 0 1 1 8 0 4 4 0 0 1-8 0z" />
+      </svg>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <h1 style="color: #00adb5; font-size: 1.8rem; font-weight: bold">
+          Rent a Car Loriki
+        </h1>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#cars">Cars</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#car-review-section">rating & Review</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-black">
+      <section id="home" class="section hero-section">
+        <div class="container hero-content">
+          <img src="img/car-header.png" alt="Car" class="hero-car" />
+          <div class="hero-text">
+            <h2>Your Premium Ride Awaits</h2>
+            <p>Luxury, comfort, and style — all at your fingertips.</p>
+            <a href="#cars" class="btn">Explore Our Cars</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+          <!-- 6 Service Cards Here -->
+          <div class="service-card">
+            <div class="icon">🚗</div>
+            <h3>Wide Car Selection</h3>
+            <p>
+              Choose from a large fleet of luxury, economy, and specialty
+              vehicles.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🔐</div>
+            <h3>Secure Reservations</h3>
+            <p>
+              Enjoy peace of mind with our encrypted and secure booking system.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">📅</div>
+            <h3>Flexible Booking</h3>
+            <p>Reserve cars for any date and duration — no rigid schedules.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🛡️</div>
+            <h3>Fraud Prevention</h3>
+            <p>
+              Advanced security checks to prevent identity and payment fraud.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🔍</div>
+            <h3>Vehicle Verification</h3>
+            <p>All cars are inspected and verified for quality and safety.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🕵️</div>
+            <h3>Privacy Assurance</h3>
+            <p>
+              Your personal data is protected and never shared without consent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat">
+          <h3 class="counter" data-target="52">0</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="23">0</h3>
+          <p>Cars Rented</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="5">0</h3>
+          <p>Years of Experience</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section id="cars" class="section cars-section">
+      <div class="container">
+        <h2>Our Fleet</h2>
+        <div class="car-grid" id="carList"></div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section booking-section">
+      <div class="container">
+        <h2>Book a Car</h2>
+        <form id="bookingForm">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <label for="carModel">Car Model:</label>
+          <div class="car-dropdown">
+            <!-- Car options will be populated here by JavaScript -->
+            <select id="carModel" name="carModel">
+              <option value="" disabled selected>Select a car model</option>
+              <!-- The car options will be dynamically inserted here by JS -->
+            </select>
+          </div>
+          <label>Pick-up Date:</label>
+          <input type="date" id="pickupDate" required />
+
+          <label>Return Date:</label>
+          <input type="date" id="returnDate" required />
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>💳 How do I pay for the rental?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Payments can be made securely online using your credit or debit
+            card.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>📆 Is there a minimum rental period?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes, the minimum rental period is 24 hours.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>🪪 What documents do I need?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            You’ll need a valid driver’s license and ID or passport.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Section -->
+    <div class="car-review-section" id="car-review-section">
+      <h3>Ratings & Reviews</h3>
+
+      <div class="review-form">
+        <input
+          type="text"
+          id="reviewer-name"
+          placeholder="Your name"
+          maxlength="30" />
+
+        <div
+          class="rating"
+          id="rating-stars"
+          style="font-size: 1.8rem; gap: 5px; margin: 10px 0; cursor: pointer">
+          <span class="star" data-value="1">&#9734;</span>
+          <span class="star" data-value="2">&#9734;</span>
+          <span class="star" data-value="3">&#9734;</span>
+          <span class="star" data-value="4">&#9734;</span>
+          <span class="star" data-value="5">&#9734;</span>
+        </div>
+
+        <textarea
+          id="review-text"
+          placeholder="Leave your review here..."></textarea>
+        <button id="submit-review">Submit Review</button>
+      </div>
+
+      <div class="reviews-list">
+        <!-- Dynamically loaded reviews will appear here -->
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Email: qendrimhadraj@gmail.com</p>
+        <p>Phone: +383 49 133 748</p>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d631.5984113618092!2d20.43155787430828!3d42.3887932434237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1749852555870!5m2!1sen!2s"
+            width="1500"
+            height="300"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Loriki Rent-A-Car. All rights reserved By Triumf Hadri.</p>
+    </footer>
+
+    <!-- Car Detail Modal -->
+    <div id="carModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <div class="modal-body">
+          <h2 id="modalCarTitle">Car Name</h2>
+
+          <div class="modal-image-slider">
+            <button class="slider-btn" id="prevBtn">&#8249;</button>
+            <img id="modalCarImage" src="" alt="Car Image" />
+            <button class="slider-btn" id="nextBtn">&#8250;</button>
+          </div>
+
+          <p
+            id="modalCarDescription"
+            style="color: black; margin-top: 1rem; font-size: 1.1rem"></p>
+          <p
+            id="modalCarPrice"
+            style="font-size: 1.3rem; font-weight: bold; color: #007b5e"></p>
+
+          <ul>
+            <li><strong>Year:</strong> <span id="modalCarYear"></span></li>
+            <li>
+              <strong>Engine Type:</strong> <span id="modalCarEngine"></span>
+            </li>
+            <li><strong>Fuel Type:</strong> <span id="modalCarFuel"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
